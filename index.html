@@ -42,8 +42,9 @@ body {
 .hero {
     position: relative;
     width: 100%;
-    background: var(--cream);
+    background: var(--light-pink);
     overflow: hidden;
+    margin-bottom: 0;
 }
 
 .hero-image {
@@ -59,14 +60,17 @@ body {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0;
-    height: 20%;
+    bottom: -1px;
+    height: 32%;
     background: linear-gradient(
         to bottom,
-        transparent,
-        var(--light-pink)
+        rgba(255, 243, 246, 0),
+        rgba(255, 243, 246, 0.25) 30%,
+        rgba(255, 243, 246, 0.75) 65%,
+        #fff3f6 100%
     );
     pointer-events: none;
+    z-index: 2;
 }
 
 /* =========================
@@ -132,7 +136,9 @@ body {
 .intro {
     position: relative;
     text-align: center;
-    padding: 45px 24px 85px;
+    margin-top: -35px;
+    padding: 80px 24px 85px;
+    z-index: 3;
 
     background:
         radial-gradient(
