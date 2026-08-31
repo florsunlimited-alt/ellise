@@ -1,1 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Elisse at 7 | Fairytale Land</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap');
+
+:root {
+    --pink: #d990a7;
+    --deep-pink: #a85e78;
+    --light-pink: #fff3f6;
+    --cream: #fffaf3;
+    --gold: #b79a62;
+    --text: #604d54;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--light-pink);
+    color: var(--text);
+    font-family: "Montserrat", Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+    width: 100%;
+    background: var(--cream);
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Soft transition underneath the gown */
+
+.hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 20%;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--light-pink)
+    );
+    pointer-events: none;
+}
+
+/* =========================
+   FLOATING DECORATIONS
+========================= */
+
+.magic {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.magic span {
+    position: absolute;
+    color: var(--gold);
+    opacity: 0.65;
+    animation: floatMagic 7s ease-in-out infinite;
+}
+
+.magic .one {
+    top: 18%;
+    left: 8%;
+    font-size: 18px;
+}
+
+.magic .two {
+    top: 36%;
+    right: 9%;
+    font-size: 24px;
+    animation-delay: -2s;
+}
+
+.magic .three {
+    top: 62%;
+    left: 12%;
+    font-size: 14px;
+    animation-delay: -4s;
+}
+
+.magic .four {
+    top: 70%;
+    right: 15%;
+    font-size: 18px;
+    animation-delay: -5s;
+}
+
+@keyframes floatMagic {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(8deg);
+    }
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    position: relative;
+    text-align: center;
+    padding: 45px 24px 85px;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(217,144,167,0.15),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 60%,
+            rgba(183,154,98,0.10),
+            transparent 25%
+        ),
+        var(--light-pink);
+}
+
+.kicker {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--deep-pink);
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+
+.once {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 27px;
+    font-style: italic;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.invite {
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 6px;
+}
+
+h1 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(55px, 12vw, 105px);
+    line-height: 0.82;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: var(--deep-pink);
+}
+
+.intro-text {
+    max-width: 570px;
+    margin: 25px auto 0;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.ornament {
+    color: var(--gold);
+    font-size: 20px;
+    letter-spacing: 5px;
+    margin-top: 28px;
+}
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+.section {
+    position: relative;
+    text-align: center;
+    padding: 85px 22px;
+}
+
+.section.cream {
+    background: var(--cream);
+}
+
+.section.pink {
+    background: var(--light-pink);
+}
+
+.section h2 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(42px, 8vw, 65px);
+    font-weight: 600;
+    color: var(--deep-pink);
+    margin-top: 5px;
+}
+
+.section-text {
+    max-width: 650px;
+    margin: 18px auto 0;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* =========================
+   JOLLIBEE DESTINATION
+========================= */
+
+.destination {
+    margin: 35px auto 0;
+    max-width: 600px;
+    padding: 30px 25px;
+    border: 1px solid rgba(183,154,98,0.4);
+    border-radius: 22px;
+    background: rgba(255,255,255,0.6);
+}
+
+.destination-label {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 30px;
+    background: #fff0b8;
+    color: #82611e;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.destination h3 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 40px;
+    color: #8e5f70;
+}
+
+.destination p {
+    margin-top: 7px;
+    font-size: 13px;
+}
+
+/* =========================
+   EVENT DETAILS
+========================= */
+
+.details {
+    max-width: 950px;
+    margin: 40px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.detail-card {
+    padding: 28px 15px;
+    border: 1px solid rgba(183,154,98,0.4);
+    border-radius: 18px;
+    background: rgba(255,255,255,0.65);
+}
+
+.detail-card span {
+    display: block;
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.detail-card strong {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+/* =========================
+   STORY
+========================= */
+
+.story {
+    max-width: 750px;
+    margin: auto;
+}
+
+.story-flower {
+    font-size: 34px;
+    margin-bottom: 18px;
+}
+
+.story-quote {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 28px;
+    line-height: 1.5;
+    color: #72545e;
+    margin-top: 22px;
+}
+
+/* =========================
+   GIFT GUIDE
+========================= */
+
+.gifts {
+    max-width: 950px;
+    margin: 38px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.gift-card {
+    padding: 30px 20px;
+    background: rgba(255,255,255,0.68);
+    border: 1px solid rgba(183,154,98,0.4);
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+.gift-card:hover {
+    transform: translateY(-7px);
+}
+
+.gift-icon {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.gift-card h3 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    color: var(--deep-pink);
+    font-size: 27px;
+}
+
+.gift-card p {
+    font-size: 12px;
+    line-height: 1.7;
+    margin-top: 8px;
+}
+
+/* =========================
+   RSVP
+========================= */
+
+.rsvp {
+    padding-bottom: 100px;
+}
+
+.crown {
+    font-size: 40px;
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+.rsvp-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 16px 48px;
+    border-radius: 100px;
+    background: var(--deep-pink);
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    box-shadow: 0 12px 30px rgba(168,94,120,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rsvp-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 35px rgba(168,94,120,0.32);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 60px 20px 75px;
+    background: var(--light-pink);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 25px;
+}
+
+footer strong {
+    color: var(--deep-pink);
+}
+
+.footer-small {
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: 11px;
+    color: #8c777e;
+    margin-top: 12px;
+}
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .hero-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .details {
+        grid-template-columns: 1fr;
+        max-width: 430px;
+    }
+
+    .gifts {
+        grid-template-columns: 1fr;
+        max-width: 430px;
+    }
+
+    .section {
+        padding: 65px 20px;
+    }
+
+    .intro {
+        padding-top: 35px;
+    }
+
+    .story-quote {
+        font-size: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =====================================
+     HERO
+===================================== -->
+
+<section class="hero">
+
+    <!-- CHANGE THIS IMAGE NAME IF NEEDED -->
+    <img
+        class="hero-image"
+        src="assets/elisse-princess.png"
+        alt="Elisse in her princess gown"
+    >
+
+    <div class="magic">
+        <span class="one">✦</span>
+        <span class="two">🦋</span>
+        <span class="three">✧</span>
+        <span class="four">🦋</span>
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     INTRO
+===================================== -->
+
+<section class="intro reveal">
+
+    <div class="ornament">
+        ✦　✧　🦋　✧　✦
+    </div>
+
+    <p class="kicker">
+        ELISSE AT 7
+    </p>
+
+    <p class="once">
+        Once Upon a Time...
+    </p>
+
+    <p class="invite">
+        YOU ARE INVITED TO HER
+    </p>
+
+    <h1>
+        FAIRY<br>
+        ADVENTURE
+    </h1>
+
+    <p class="intro-text">
+        A magical birthday journey filled with
+        laughter, wonder, love, and a little bit
+        of fairy dust.
+    </p>
+
+    <div class="ornament">
+        ✧　❀　✧
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     FAIRYTALE LAND + JOLLIBEE
+===================================== -->
+
+<section class="section cream reveal">
+
+    <p class="kicker">
+        WELCOME TO
+    </p>
+
+    <h2>
+        Fairytale Land
+    </h2>
+
+    <p class="section-text">
+        The magic begins at a very special place,
+        where our little princess will celebrate
+        another beautiful chapter of her story.
+    </p>
+
+    <div class="destination">
+
+        <div class="destination-label">
+            THE BIRTHDAY DESTINATION
+        </div>
+
+        <h3>
+            Jollibee
+        </h3>
+
+        <p>
+            [Jollibee Branch]
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     EVENT DETAILS
+===================================== -->
+
+<section class="section pink reveal">
+
+    <p class="kicker">
+        THE FAIRYTALE BEGINS
+    </p>
+
+    <h2>
+        Save the Date
+    </h2>
+
+    <div class="details">
+
+        <div class="detail-card">
+            <span>DATE</span>
+            <strong>[INSERT DATE]</strong>
+        </div>
+
+        <div class="detail-card">
+            <span>TIME</span>
+            <strong>[INSERT TIME]</strong>
+        </div>
+
+        <div class="detail-card">
+            <span>VENUE</span>
+            <strong>Jollibee<br>[BRANCH]</strong>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     STORY
+===================================== -->
+
+<section class="section cream reveal">
+
+    <div class="story">
+
+        <div class="story-flower">
+            🦋
+        </div>
+
+        <p class="kicker">
+            A LITTLE FAIRY TALE AWAITS...
+        </p>
+
+        <h2>
+            A Day Made of Magic
+        </h2>
+
+        <p class="story-quote">
+            "Every little princess deserves
+            a day filled with magic, laughter,
+            love, and wonderful memories."
+        </p>
+
+        <p class="section-text">
+            Come celebrate with Elisse as she
+            begins a brand new chapter at seven.
+            Your presence will make her magical
+            day even more special.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     GIFT GUIDE
+===================================== -->
+
+<section class="section pink reveal">
+
+    <p class="kicker">
+        A LITTLE TREASURE FOR OUR PRINCESS
+    </p>
+
+    <h2>
+        Gift Guide
+    </h2>
+
+    <p class="section-text">
+        Your presence is already the sweetest gift.
+        But if you'd like to bring a little something
+        for Elisse, here are a few things she loves.
+    </p>
+
+
+    <div class="gifts">
+
+        <div class="gift-card">
+
+            <div class="gift-icon">
+                🎨
+            </div>
+
+            <h3>
+                Arts & Crafts
+            </h3>
+
+            <p>
+                Creative things she can make,
+                color, and explore.
+            </p>
+
+        </div>
+
+
+        <div class="gift-card">
+
+            <div class="gift-icon">
+                📚
+            </div>
+
+            <h3>
+                Books
+            </h3>
+
+            <p>
+                Fairytales, adventure stories,
+                and wonderful new worlds.
+            </p>
+
+        </div>
+
+
+        <div class="gift-card">
+
+            <div class="gift-icon">
+                🎀
+            </div>
+
+            <h3>
+                Pretty Things
+            </h3>
+
+            <p>
+                Cute accessories and little
+                princess treasures.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     RSVP
+===================================== -->
+
+<section class="section cream rsvp reveal">
+
+    <div class="crown">
+        ♕
+    </div>
+
+    <p class="kicker">
+        THE ADVENTURE AWAITS
+    </p>
+
+    <h2>
+        Will You Join<br>
+        the Adventure?
+    </h2>
+
+    <p class="section-text">
+        We would love to celebrate
+        this magical day with you.
+    </p>
+
+    <!-- CHANGE # TO YOUR RSVP LINK -->
+    <a
+        href="#"
+        class="rsvp-button"
+    >
+        RSVP
+    </a>
+
+</section>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+    <div class="ornament">
+        ✧　❀　✧
+    </div>
+
+    With love,<br>
+
+    <strong>
+        Elisse & Family
+    </strong>
+
+    <div class="footer-small">
+        Thank you for being part of her story.
+    </div>
+
+</footer>
+
+
+<!-- =====================================
+     SCROLL ANIMATION
+===================================== -->
+
+<script>
+
+const revealElements =
+document.querySelectorAll(".reveal");
+
+const observer =
+new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+revealElements.forEach(element => {
+
+    observer.observe(element);
+
+});
+
+</script>
+
+</body>
+</html>
